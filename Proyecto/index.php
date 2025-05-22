@@ -33,7 +33,7 @@
                 <button type="submit">Iniciar Sesión</button>
                 <div class="register-link">
                     <span>¿No tienes cuenta?</span>
-                    <a href="PHP/RegistroFrm.php">Regístrate</a>
+                    <a href="./PHP/RegistroFrm.php">Regístrate</a>
                 </div>
             </form>
         </div>

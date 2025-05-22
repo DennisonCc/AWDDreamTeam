@@ -26,7 +26,7 @@
                 <button type="submit">Registrarse</button>
                 <div class="register-link">
                     <span>¿Ya tienes cuenta?</span>
-                    <a href="../LoginFrm.php">Inicia sesión</a>
+                    <a href="../index.php">Inicia sesión</a>
                 </div>
             </form>
         </div>
