@@ -8,14 +8,13 @@ body {
     background: linear-gradient(145deg, #f1f3f5 0%, #e2e8f0 100%);
     display: flex;
     justify-content: center;
-    align-items: center; /* Cambia de flex-start a center para centrar verticalmente */
+    align-items: center; 
     min-height: 100vh;
-    height: 100vh; /* Asegura altura completa de la ventana */
-    padding: 0; /* Elimina padding para evitar movimiento */
+    height: 100vh; 
+    padding: 0; 
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     color: #1e293b;
-    overflow: hidden; /* Evita scroll innecesario */
-}
+    overflow: hidden; 
 
 .container {
     background: #ffffff;
@@ -266,4 +265,5 @@ footer {
     .LoginForm {
         padding: 0.5rem 0.1rem;
     }
+ }
 }

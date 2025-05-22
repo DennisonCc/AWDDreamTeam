@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login-register2.css">
+    <link rel="stylesheet" href="CSS/login-register.css">
     <title>Iniciar Sesión | Bazar</title>
     
 </head>
@@ -33,7 +33,7 @@
                 <button type="submit">Iniciar Sesión</button>
                 <div class="register-link">
                     <span>¿No tienes cuenta?</span>
-                    <a href="/Proyecto/PHP/RegistroFrm.php">Regístrate</a>
+                    <a href="PHP/RegistroFrm.php">Regístrate</a>
                 </div>
             </form>
         </div>
