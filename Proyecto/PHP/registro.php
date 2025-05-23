@@ -1,6 +1,6 @@
 <?php
 
-include_once 'conection.php';
+include_once 'connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username']);
@@ -12,7 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($password !== $confirm_password) {
         $error = "Las contraseñas no coinciden.";
     } else {
-        
         $sql = "SELECT id FROM usuarios WHERE username = ? OR email = ? LIMIT 1";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param('ss', $username, $email);
@@ -21,13 +20,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($stmt->num_rows > 0) {
             $error = "El usuario o correo ya existe.";
         } else {
-            
             $hash = password_hash($password, PASSWORD_DEFAULT);
             $sql = "INSERT INTO usuarios (username, email, password) VALUES (?, ?, ?)";
             $stmt = $conn->prepare($sql);
             $stmt->bind_param('sss', $username, $email, $hash);
             if ($stmt->execute()) {
-                header('Location: ../LoginFrm.php?registro=exitoso');
+                header('Location: ../index.php?registro=exitoso');
                 exit();
             } else {
                 $error = "Error al registrar. Intenta de nuevo.";

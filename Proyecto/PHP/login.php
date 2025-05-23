@@ -17,14 +17,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             session_start();
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
-            header('Location: ../HTML/nav.html');
+            header('Location: ../html/nav.html');
             exit();
         } else {
-            header('Location: ../LoginFrm.php?error=1');
+            header('Location: ../index.php?error=1');
             exit();
         }
     } else {
-        header('Location: ../LoginFrm.php?error=1');
+        header('Location: ../index.php?error=1');
         exit();
     }
 }
