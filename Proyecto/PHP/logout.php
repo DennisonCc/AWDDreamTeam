@@ -4,3 +4,4 @@ session_unset();
 session_destroy();
 header('Location: ../LoginFrm.php?logout=1');
 exit();
+?>
