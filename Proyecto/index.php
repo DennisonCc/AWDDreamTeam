@@ -15,7 +15,7 @@
                 <h2>Bazar DreamTeam</h2>
                 <p class="subtitle">Inicia sesión para continuar</p>
             </header>
-            <form action="PHP/login.php" method="POST" class="LoginForm">
+            <form action="php/login.php" method="POST" class="LoginForm">
                 <p>Iniciar Sesión</p>
                 <?php if (isset($_GET['error'])): ?>
                     <div class="error-message">Usuario o contraseña incorrectos.</div>
@@ -33,7 +33,7 @@
                 <button type="submit">Iniciar Sesión</button>
                 <div class="register-link">
                     <span>¿No tienes cuenta?</span>
-                    <a href="./PHP/RegistroFrm.php">Regístrate</a>
+                    <a href="./php/RegistroFrm.php">Regístrate</a>
                 </div>
             </form>
         </div>
