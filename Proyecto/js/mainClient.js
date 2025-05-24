@@ -87,6 +87,7 @@ function getClientData() {
 
 
 
+
 // Función para buscar productos
 function buscarProducto() {
     const query = document.getElementById("buscarProducto").value;
