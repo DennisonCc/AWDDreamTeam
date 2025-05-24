@@ -10,25 +10,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     if ($password !== $confirm_password) {
-        $error = "Las contraseñas no coinciden.";
+        // Mostrar mensaje de error y detener ejecución
+        echo '<script>alert("Las contraseñas no coinciden."); window.history.back();</script>';
+        exit();
     } else {
-        $sql = "SELECT id FROM usuarios WHERE username = ? OR email = ? LIMIT 1";
+        $sql = "SELECT id FROM usuarios WHERE username = :username OR email = :email LIMIT 1";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param('ss', $username, $email);
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':email', $email);
         $stmt->execute();
-        $stmt->store_result();
-        if ($stmt->num_rows > 0) {
-            $error = "El usuario o correo ya existe.";
+        if ($stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo '<script>alert("El usuario o correo ya existe."); window.history.back();</script>';
+            exit();
         } else {
             $hash = password_hash($password, PASSWORD_DEFAULT);
-            $sql = "INSERT INTO usuarios (username, email, password) VALUES (?, ?, ?)";
+            $sql = "INSERT INTO usuarios (username, email, password) VALUES (:username, :email, :password)";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param('sss', $username, $email, $hash);
+            $stmt->bindParam(':username', $username);
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':password', $hash);
             if ($stmt->execute()) {
                 header('Location: ../index.php?registro=exitoso');
                 exit();
             } else {
-                $error = "Error al registrar. Intenta de nuevo.";
+                echo '<script>alert("Error al registrar. Intenta de nuevo."); window.history.back();</script>';
+                exit();
             }
         }
     }
