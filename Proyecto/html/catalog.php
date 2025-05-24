@@ -66,7 +66,7 @@
                         <tbody>
                             <?php
                             try {
-                                include '../PHP/connection.php';
+                                include '../php/connection.php';
                                 $catalogStmt = $conn->query("
                                     SELECT c.id, c.customName, c.filePath, s.company, c.created_at
                                     FROM catalogs c 
