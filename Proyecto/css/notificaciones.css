@@ -1,65 +1,88 @@
-
 body {
-    background: #f6f6fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: linear-gradient(145deg, #f1f3f5 0%, #e2e8f0 100%);
     font-family: 'Segoe UI', 'Arial', sans-serif;
+    color: #1e293b;
     margin: 0;
-    color: #333;
 }
 
 .notificaciones-container {
-    max-width: 600px;
-    margin: 40px auto;
     background: #fff;
-    border-radius: 18px;
-    box-shadow: 0 2px 12px #a3c4f340;
-    padding: 2.5em 2em 2em 2em;
+    border-radius: 2.5rem;
+    box-shadow: 0 10px 40px rgba(30,41,59,0.13);
+    width: 92vw;
+    max-width: 600px;
+    min-height: 40vh;
+    margin: 3rem 0 2rem 0;
+    padding: 2.5rem 2rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-1rem); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 h1 {
-    color: #a3c4f3;
+    color: #1e293b;
     font-size: 2.2em;
-    margin-bottom: 0.5em;
+    margin-bottom: 1.5em;
     text-align: center;
     letter-spacing: 1px;
+    font-weight: 700;
 }
 
 .notificacion {
-    background: linear-gradient(90deg, #b7e5dd 60%, #f6d6d6 100%);
-    border-left: 6px solid #a3c4f3;
-    border-radius: 10px;
+    background: #f8fafc;
+    border-left: 6px solid #64748b;
+    border-radius: 1.5rem;
     margin-bottom: 1.2em;
-    padding: 1em 1.2em;
-    box-shadow: 0 1px 4px #b7e5dd40;
+    padding: 1.2em 1.5em;
+    box-shadow: 0 4px 16px rgba(30,41,59,0.07);
     display: flex;
     align-items: center;
     gap: 1em;
-    transition: background 0.2s;
+    transition: background 0.2s, box-shadow 0.2s;
+    border: 1.5px solid #e2e8f0;
+    position: relative;
 }
 
 .notificacion:hover {
-    background: linear-gradient(90deg, #a3c4f3 60%, #f6d6d6 100%);
+    background: #e2e8f0;
+    box-shadow: 0 8px 24px rgba(30,41,59,0.13);
 }
 
 .icono {
-    font-size: 1.7em;
-    color: #b7e5dd;
+    font-size: 2rem;
+    color: #475569;
+    opacity: 0.85;
+    margin-right: 0.5em;
 }
 
 .mensaje {
     flex: 1;
-    color: #4a4e69;
+    color: #64748b;
+    font-size: 1.05em;
 }
 
 .fecha {
-    font-size: 0.9em;
-    color: #7d8597;
+    font-size: 0.95em;
+    color: #94a3b8;
     min-width: 90px;
     text-align: right;
+    font-weight: 500;
 }
 
 .sin-notificaciones {
     text-align: center;
-    color: #b7e5dd;
+    color: #64748b;
     margin-top: 2em;
     font-size: 1.1em;
 }
@@ -67,6 +90,7 @@ h1 {
 @media (max-width: 700px) {
     .notificaciones-container {
         padding: 1.2em 0.5em 1.5em 0.5em;
+        width: 98vw;
     }
     h1 {
         font-size: 1.4em;
@@ -75,6 +99,7 @@ h1 {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.5em;
+        padding: 1em 0.7em;
     }
     .fecha {
         align-self: flex-end;
