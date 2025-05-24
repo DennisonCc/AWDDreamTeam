@@ -1,4 +1,4 @@
-const API_BASE_URL = '../PHP/suppliers.php';
+const API_BASE_URL = '../php/suppliers.php';
 
 let currentFilter = 'a-z';
 
@@ -301,6 +301,7 @@ function normalizeSpaces(element) {
     element.value = element.value.replace(/\s+/g, ' ').trim();
 }
 
+// DEBUG: Mostrar respuesta de error detallada en consola
 function loadSuppliers(query = '') {
     const action = query ? 'search' : 'read';
     $.ajax({
@@ -313,10 +314,12 @@ function loadSuppliers(query = '') {
                 renderTable(response.data);
             } else {
                 alert(response.message);
+                console.error('Respuesta del backend:', response);
             }
         },
         error: function(xhr, status, error) {
-            alert('Error al cargar los proveedores: ' + error);
+            alert('Error al cargar los proveedores: ' + error + '\n' + xhr.responseText);
+            console.error('XHR:', xhr.responseText);
         }
     });
 }
