@@ -84,6 +84,36 @@ function getClientData() {
 });
 
 
+/*function getClientData() {
+    const taxid = document.getElementById("taxid").value;
+    if (taxid === "") return;
+  
+    fetch("searchClient.php?taxid=" + taxid)
+      .then(response => response.json())
+      .then(data => {
+        if (data) {
+          document.getElementById("fullname").value = data.FullName;
+          document.getElementById("address").value = data.Address;
+          document.getElementById("references").value = data.References;
+          document.getElementById("phone").value = data.Phone;
+          document.getElementById("email").value = data.Email;
+        }
+      });
+  }
+  
+  function toggleCliente() {
+    const tipo = document.getElementById("facturaTipo").value;
+    const disabled = (tipo === "consumidor_final");
+    ["taxid", "fullname", "address", "references", "phone", "email"]
+      .forEach(id => document.getElementById(id).disabled = disabled);
+  }
+  
+
+*/
+
+
+
+
 
 
 
