@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     if ($password !== $confirm_password) {
-        // Mostrar mensaje de error y detener ejecución
+       
         echo '<script>alert("Las contraseñas no coinciden."); window.history.back();</script>';
         exit();
     } else {
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->bindParam(':email', $email);
             $stmt->bindParam(':password', $hash);
             if ($stmt->execute()) {
-                header('Location: ../index.php?registro=exitoso');
+                header('Location: /index.php?registro=exitoso');
                 exit();
             } else {
                 echo '<script>alert("Error al registrar. Intenta de nuevo."); window.history.back();</script>';
