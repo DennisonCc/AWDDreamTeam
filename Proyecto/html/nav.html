@@ -43,7 +43,7 @@
                 </a>
             </li>
                  <li>
-                <a href="#" class="nav-item" data-target="../Cliente/Factura.html" >
+                <a href="#" class="nav-item" data-target="Factura.html" >
                     <i class="fas fa-box nav-icon"></i>
                     <span>Facturación</span>
                 </a>
@@ -54,14 +54,14 @@
                 <i class="fas fa-user-circle nav-icon"></i>
                 <span>Usuario</span>
             </div>
-            <button class="logout-btn" data-tooltip="Cerrar Sesión" onclick="logoutUser(event)">
+            <button class="logout-btn" data-tooltip="Cerrar Sesión" onclick="window.location.href='../php/logout.php';">
                 <i class="fas fa-sign-out-alt nav-icon"></i>
             </button>
         </div>
     </nav>
     <main class="main-content">
         <iframe id="content-frame" src="suppliers.html" frameborder="0" style="width: 100%; height: 100vh;"></iframe>
-        <iframe id="content-frame" src="../Cliente/Factura.html" frameborder="0" style="width: 100%; height: 100vh;"></iframe>
+        <iframe id="content-frame" src="Factura.html" frameborder="0" style="width: 100%; height: 100vh;"></iframe>
     </main>
     <script src="../js/nav.js"></script>
     <script src="../js/main-menu-login-guard.js"></script>
