@@ -202,7 +202,8 @@ function createSupplier() {
             }
         },
         error: function(xhr, status, error) {
-            alert('Error al procesar la solicitud: ' + error);
+            console.error('Error al procesar la solicitud:', error, xhr.responseText);
+            alert('Error al procesar la solicitud: ' + error + '\n' + xhr.responseText);
         }
     });
 }
