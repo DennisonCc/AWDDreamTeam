@@ -2,7 +2,7 @@ function getClientData() {
     const taxid = document.getElementById("taxid").value;
     if (taxid === "") return;
 
-    fetch("buscar_cliente.php?taxid=" + taxid)
+    fetch("/Cliente/buscar_cliente.php?taxid=" + taxid)
       .then(response => response.json())
       .then(data => {
         if (data) {
