@@ -1,27 +1,29 @@
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    background: linear-gradient(145deg, #f1f3f5 0%, #e2e8f0 100%);
-    font-family: 'Segoe UI', 'Arial', sans-serif;
-    color: #1e293b;
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(145deg, #f1f3f5 0%, #e2e8f0 100%);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #1e293b;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 .notificaciones-container {
     background: #fff;
-    border-radius: 2.5rem;
-    box-shadow: 0 10px 40px rgba(30,41,59,0.13);
-    width: 92vw;
-    max-width: 600px;
-    min-height: 40vh;
-    margin: 3rem 0 2rem 0;
-    padding: 2.5rem 2rem 2rem 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
+    width: 100%;
+    max-width: 32rem;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    margin: 2.5rem 0 2rem 0;
     animation: fadeIn 0.5s ease-out;
 }
 
@@ -32,52 +34,63 @@ body {
 
 h1 {
     color: #1e293b;
-    font-size: 2.2em;
-    margin-bottom: 1.5em;
-    text-align: center;
-    letter-spacing: 1px;
+    font-size: clamp(1.5rem, 5vw, 2rem);
     font-weight: 700;
+    margin-bottom: 1.2em;
+    text-align: left;
+    letter-spacing: 0.5px;
 }
 
 .notificacion {
     background: #f8fafc;
-    border-left: 6px solid #64748b;
-    border-radius: 1.5rem;
-    margin-bottom: 1.2em;
-    padding: 1.2em 1.5em;
-    box-shadow: 0 4px 16px rgba(30,41,59,0.07);
+    border-left: 4px solid #3b82f6;
+    border-radius: 1rem;
+    margin-bottom: 1.1em;
+    padding: 1em 1.2em;
+    box-shadow: 0 2px 8px rgba(30,41,59,0.07);
     display: flex;
     align-items: center;
     gap: 1em;
     transition: background 0.2s, box-shadow 0.2s;
-    border: 1.5px solid #e2e8f0;
+    border: 1px solid #e2e8f0;
     position: relative;
+    min-height: 3.2em;
 }
 
 .notificacion:hover {
     background: #e2e8f0;
-    box-shadow: 0 8px 24px rgba(30,41,59,0.13);
+    box-shadow: 0 4px 16px rgba(30,41,59,0.13);
 }
 
 .icono {
-    font-size: 2rem;
-    color: #475569;
-    opacity: 0.85;
-    margin-right: 0.5em;
+    font-size: 1.7rem;
+    color: #3b82f6;
+    margin-right: 0.7em;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2em;
+    height: 2.2em;
+    background: #e2e8f0;
+    border-radius: 50%;
+    box-shadow: 0 1px 4px rgba(30,41,59,0.07);
 }
 
 .mensaje {
     flex: 1;
-    color: #64748b;
+    color: #1e293b;
     font-size: 1.05em;
+    word-break: break-word;
 }
 
 .fecha {
-    font-size: 0.95em;
-    color: #94a3b8;
+    font-size: 0.93em;
+    color: #64748b;
     min-width: 90px;
     text-align: right;
     font-weight: 500;
+    margin-left: 0.5em;
 }
 
 .sin-notificaciones {
@@ -89,19 +102,23 @@ h1 {
 
 @media (max-width: 700px) {
     .notificaciones-container {
-        padding: 1.2em 0.5em 1.5em 0.5em;
+        padding: 1em 0.3em 1em 0.3em;
         width: 98vw;
     }
     h1 {
-        font-size: 1.4em;
+        font-size: 1.2em;
     }
     .notificacion {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.5em;
-        padding: 1em 0.7em;
+        padding: 0.8em 0.5em;
     }
     .fecha {
         align-self: flex-end;
+        margin-left: 0;
+    }
+    .icono {
+        margin-bottom: 0.5em;
     }
 }
