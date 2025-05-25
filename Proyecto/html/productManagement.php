@@ -14,7 +14,7 @@ error_log("Ejecutando productManagement.php: " . date('Y-m-d H:i:s'));
     <div class="container">
         <div class="header">
             <div class="header-info">
-                <h1>Gestión de Productos</h1>
+                <h1>Gestión de Productos_</h1>
                 <p>Administra los productos y categorías de tu inventario.</p>
             </div>
             <div class="header-actions">
@@ -36,7 +36,7 @@ error_log("Ejecutando productManagement.php: " . date('Y-m-d H:i:s'));
                 <i class="fas fa-filter icon-filter"></i>
                 <select id="categoryFilter" onchange="filterProducts()">
                     <option value="">Filtrar por Categoría</option>
-                    <?php include '../PHP/populateCategories.php'; ?>
+                    <?php include '../php/populateCategories.php'; ?>
                 </select>
                 <i class="fas fa-chevron-down icon-chevron"></i>
             </div>
@@ -58,7 +58,7 @@ error_log("Ejecutando productManagement.php: " . date('Y-m-d H:i:s'));
                     </tr>
                 </thead>
                 <tbody>
-                    <?php include '../PHP/populateProducts.php'; ?>
+                    <?php include '../php/populateProducts.php'; ?>
                 </tbody>
             </table>
         </div>
@@ -108,7 +108,7 @@ error_log("Ejecutando productManagement.php: " . date('Y-m-d H:i:s'));
                             <label for="productCategoryId">Categoría del Producto:</label>
                             <select name="categoryId" id="productCategoryId" required>
                                 <option value="">Seleccionar Categoría</option>
-                                <?php include '../PHP/populateCategories.php'; ?>
+                                <?php include '../php/populateCategories.php'; ?>
                             </select>
                         </div>
                     </div>
@@ -151,7 +151,7 @@ error_log("Ejecutando productManagement.php: " . date('Y-m-d H:i:s'));
                             <label for="supplierId">Proveedor:</label>
                             <select name="supplierId" id="supplierId" required>
                                 <option value="">Seleccionar Proveedor</option>
-                                <?php include '../PHP/populateSuppliers.php'; ?>
+                                <?php include '../php/populateSuppliers.php'; ?>
                             </select>
                         </div>
                     </div>

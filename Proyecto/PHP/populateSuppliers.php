@@ -2,7 +2,10 @@
 error_log("Ejecutando populateSuppliers.php: " . date('Y-m-d H:i:s'));
 
 include 'connection.php';
-
+    if (!$conn) {
+    echo "<option value='' disabled>Conexión fallida</option>";
+    exit;
+}
 try {
     $stmt = $conn->query("SELECT id, company FROM suppliers");
     $suppliers = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -17,10 +20,7 @@ try {
             echo "<option value='$id'>$company</option>";
         }
     }
-    if (!$conn) {
-    echo "<option value='' disabled>Conexión fallida</option>";
-    exit;
-}
+
 
 } catch (PDOException $e) {
     error_log("Error al cargar proveedores: " . $e->getMessage() . " - " . date('Y-m-d H:i:s'));

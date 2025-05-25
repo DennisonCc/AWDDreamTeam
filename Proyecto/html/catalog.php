@@ -173,7 +173,7 @@
             </div>
         </div>
     </div>
- 
+
     <!-- Modal para subir nuevo catálogo -->
     <div id="uploadCatalogModal" class="modal">
         <div class="modal-content">

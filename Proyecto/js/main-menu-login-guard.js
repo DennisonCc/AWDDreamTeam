@@ -43,7 +43,7 @@ function validateRegisterForm(form) {
 
 window.logoutUser = function(e) {
     if (e) e.preventDefault();
-    window.location.href = '../PHP/logout.php';
+    window.location.href = '../php/logout.php';
 };
 
 document.addEventListener('DOMContentLoaded', function() {

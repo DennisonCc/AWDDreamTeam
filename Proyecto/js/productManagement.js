@@ -117,7 +117,7 @@ function confirmDelete() {
     if (deleteType === 'category') {
         formData.append('action', 'delete');
         formData.append('categoryId', deleteId);
-        fetch('../PHP/categoryActions.php', {
+        fetch('../php/categoryActions.php', {
             method: 'POST',
             body: formData
         })
@@ -137,7 +137,7 @@ function confirmDelete() {
     } else if (deleteType === 'product') {
         formData.append('action', 'delete');
         formData.append('id', deleteId);
-        fetch('../PHP/productActions.php', {
+        fetch('../php/productActions.php', {
             method: 'POST',
             body: formData
         })
@@ -198,7 +198,7 @@ function submitCategoryForm(event) {
         description: document.getElementById('categoryDescription').value
     };
 
-    fetch('../PHP/categoryActions.php', {
+    fetch('../php/categoryActions.php', {
         method: 'POST',
         body: formData
     })
@@ -240,7 +240,7 @@ function submitProductForm(event) {
     // Depuración: Verificar el valor de categoryId antes de enviar
     console.log('categoryId enviado:', lastFormData.categoryId);
 
-    fetch('../PHP/productActions.php', {
+    fetch('../php/productActions.php', {
         method: 'POST',
         body: formData
     })
