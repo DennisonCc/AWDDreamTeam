@@ -17,8 +17,15 @@ try {
             echo "<option value='$id'>$company</option>";
         }
     }
+    if (!$conn) {
+    echo "<option value='' disabled>Conexión fallida</option>";
+    exit;
+}
+
 } catch (PDOException $e) {
     error_log("Error al cargar proveedores: " . $e->getMessage() . " - " . date('Y-m-d H:i:s'));
     echo "<option value='' disabled>Error al cargar proveedores: " . htmlspecialchars($e->getMessage()) . "</option>";
+    echo "<option value='' disabled>" . $e->getMessage() . "</option>";
+
 }
 ?>

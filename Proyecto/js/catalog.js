@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const tableBody = document.querySelector('#catalogsTable tbody');
     const noCatalogsMessage = document.getElementById('noCatalogsMessage');
-    
+
     initialTableState = tableBody.innerHTML;
     
     if (tableBody.rows.length === 0 || (tableBody.rows.length === 1 && 
@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             console.log('Enviando formulario de subida');
             const formData = new FormData(this);
-            fetch('../PHP/processCatalog.php', {
+            fetch('../php/processCatalog.php', {
                 method: 'POST',
                 body: formData
             })
@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             console.log('Enviando formulario de edición');
             const formData = new FormData(this);
-            fetch('../PHP/manageCatalog.php', {
+            fetch('../php/manageCatalog.php', {
                 method: 'POST',
                 body: formData
             })
@@ -265,7 +265,7 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             console.log('Enviando formulario de eliminación');
             const formData = new FormData(this);
-            fetch('../PHP/manageCatalog.php', {
+            fetch('../php/manageCatalog.php', {
                 method: 'POST',
                 body: formData
             })

@@ -17,3 +17,8 @@ CREATE TABLE IF NOT EXISTS suppliers (
 
 -- Eliminar cualquier dato preexistente
 TRUNCATE TABLE suppliers;
+
+
+
+
+

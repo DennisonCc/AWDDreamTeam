@@ -13,7 +13,7 @@
                 <h2>Registro DreamTeam</h2>
                 
             </header>
-            <form action="../php/registro.php" method="POST" class="LoginForm">
+            <form action="registro.php" method="POST" class="LoginForm">
                 <p>Registro</p>
                 <label for="username">Usuario</label>
                 <input type="text" id="username" name="username" required placeholder="Ingrese su usuario">

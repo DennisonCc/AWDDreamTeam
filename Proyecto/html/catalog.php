@@ -66,7 +66,7 @@
                         <tbody>
                             <?php
                             try {
-                                include '../PHP/connection.php';
+                                include '../php/connection.php';
                                 $catalogStmt = $conn->query("
                                     SELECT c.id, c.customName, c.filePath, s.company, c.created_at
                                     FROM catalogs c 
@@ -173,7 +173,7 @@
             </div>
         </div>
     </div>
-
+ 
     <!-- Modal para subir nuevo catálogo -->
     <div id="uploadCatalogModal" class="modal">
         <div class="modal-content">
@@ -182,7 +182,7 @@
                 <span class="modal-close" id="closeUploadModal">×</span>
             </div>
             <div class="modal-body">
-                <form id="uploadForm" action="../PHP/processCatalog.php" method="POST" enctype="multipart/form-data" class="form-container">
+                <form id="uploadForm" action="../php/processCatalog.php" method="POST" enctype="multipart/form-data" class="form-container">
                     <div class="form-grid">
                         <div class="formGroup">
                             <label for="supplierSelect">Seleccionar Proveedor:</label>
