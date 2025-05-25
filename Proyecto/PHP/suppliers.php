@@ -14,6 +14,7 @@ function response($success, $message, $data = null) {
 }
 
 try {
+    error_log('POST DATA: ' . print_r($_POST, true));
     switch ($action) {
         case 'create':
         case 'update':
@@ -112,6 +113,11 @@ try {
             response(false, 'Acción no válida');
     }
 } catch (PDOException $e) {
+    error_log('PDOException: ' . $e->getMessage());
     response(false, 'Error en la base de datos: ' . $e->getMessage());
+}
+catch (Exception $e) {
+    error_log('Exception: ' . $e->getMessage());
+    response(false, 'Error general: ' . $e->getMessage());
 }
 ?>
